@@ -172,10 +172,12 @@ function renderJobBoard(data) {
         ${careersLink}
       </div>`;
 
-    if (company.status === 'error') {
+    if (company.status === 'link') {
+      section.innerHTML += `<p class="company-error">This careers site can’t be checked automatically. Use the careers page link.</p>`;
+    } else if (company.status === 'error') {
       section.innerHTML += `<p class="company-error">Couldn’t fetch listings: ${escapeHtml(company.error)}</p>`;
     } else if (company.jobs.length === 0) {
-      section.innerHTML += `<p class="company-error">No open roles matching ${escapeHtml(company.roles.join(', '))} right now.</p>`;
+      section.innerHTML += `<p class="company-error">No matching roles open right now.</p>`;
     } else {
       const list = document.createElement('ul');
       list.className = 'job-list';
@@ -198,6 +200,7 @@ function renderJob(job) {
     <div class="age" title="Posted ${posted}">${job.postedAt ? timeAgo(job.postedAt) : '?'}</div>
     <div>
       <a class="job-title" href="${escapeHtml(job.url)}" target="_blank" rel="noopener">${escapeHtml(job.title)}</a>
+      ${job.role ? `<p class="job-role">Priority ${job.priority}: ${escapeHtml(job.role)}</p>` : ''}
       <p class="job-meta">${escapeHtml(job.location || 'Location not listed')}, posted ${posted}</p>
     </div>`;
   return li;

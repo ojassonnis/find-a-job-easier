@@ -243,6 +243,7 @@ button.secondary {
 
 .job-title { font-weight: 600; font-size: 1.05rem; text-decoration: none; }
 .job-title:hover { text-decoration: underline; }
+.job-role { font-size: 0.85rem; font-weight: 600; color: var(--accent); margin: 0.15rem 0 0; }
 .job-meta { color: var(--muted); font-size: 0.9rem; margin: 0.15rem 0 0; }
 
 .company-error {
