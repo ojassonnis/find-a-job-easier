@@ -64,17 +64,6 @@ const fetchers = {
     }));
   },
 
-  // jobs.smartrecruiters.com/<boardId>
-  async smartrecruiters(company) {
-    const data = await getJson(`https://api.smartrecruiters.com/v1/companies/${company.boardId}/postings?limit=100`);
-    return data.content.map(job => ({
-      title: job.name,
-      location: [job.location?.city, job.location?.country].filter(Boolean).join(', '),
-      postedAt: job.releasedDate || null,
-      url: `https://jobs.smartrecruiters.com/${company.boardId}/${job.id}`,
-    }));
-  },
-
   // <tenant>.wd3.myworkdayjobs.com/<site>  (common for big banks)
   // Workday has no official public feed; this uses the same request its own
   // careers page makes. It works for most companies but can break if they change it.
@@ -96,27 +85,131 @@ const fetchers = {
       jobBase = `https://${url.hostname}/${site}`;
     }
     const endpoint = `https://${url.hostname}/wday/cxs/${tenant}/${site}/jobs`;
+    const search = (body) => getJson(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ limit: 20, offset: 0, searchText: '', appliedFacets: {}, ...body }),
+    });
 
-    // Workday lets us search by text, so run one search per role.
+    // Big global companies have thousands of jobs, so Toronto ones get buried.
+    // Ask Workday which location filters it offers, and use the one for our country.
+    const appliedFacets = findCountryFacet((await search({ limit: 1 })).facets, company.country);
+
     const all = [];
     for (const term of company.searchTerms) {
-      const data = await getJson(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ appliedFacets: {}, limit: 20, offset: 0, searchText: term }),
-      });
-      for (const job of data.jobPostings || []) {
-        all.push({
-          title: job.title,
-          location: job.locationsText,
-          postedAt: parseWorkdayDate(job.postedOn),
-          url: jobBase + job.externalPath,
-        });
+      for (const offset of [0, 20]) { // two pages = up to 40 jobs per search
+        const data = await search({ searchText: term, offset, appliedFacets });
+        const postings = data.jobPostings || [];
+        for (const job of postings) {
+          all.push({
+            title: job.title,
+            location: job.locationsText,
+            postedAt: parseWorkdayDate(job.postedOn),
+            url: jobBase + job.externalPath,
+          });
+        }
+        if (postings.length < 20) break; // no more pages
+        await pause(200);
       }
     }
     return all;
   },
+
+  // <host>.fa.<region>.oraclecloud.com  (JPMorgan, Goldman Sachs, Oracle)
+  // Oracle Recruiting Cloud's public job search, the same one its careers pages use.
+  async oracle(company) {
+    const api = `https://${company.host}/hcmRestApi/resources/latest`;
+
+    // The site code in a careers URL can be a nickname ("LateralHiring").
+    // An unknown code silently returns some OTHER site's jobs, so look up the real one.
+    let site = company.site;
+    try {
+      const sites = (await getJson(`${api}/recruitingCESites?onlyData=true&limit=200`)).items || [];
+      if (!sites.some(s => s.SiteNumber === site)) {
+        const match = sites.find(s => Object.values(s).some(v => typeof v === 'string' && v.toLowerCase() === site.toLowerCase()));
+        if (match) site = match.SiteNumber;
+      }
+    } catch { /* keep the code as given */ }
+
+    const q = (text) => encodeURIComponent(`"${text}"`);
+    const read = async (term, withCountry) => {
+      const finder = [`siteNumber=${site}`, `keyword=${q(term)}`];
+      if (withCountry) finder.push(`location=${q(company.country)}`);
+      finder.push('limit=50', 'sortBy=POSTING_DATES_DESC');
+      const data = await getJson(`${api}/recruitingCEJobRequisitions?onlyData=true` +
+        `&expand=requisitionList.secondaryLocations&finder=findReqs;${finder.join(',')}`);
+      return data.items?.[0]?.requisitionList || [];
+    };
+
+    const all = [];
+    for (const term of company.searchTerms) {
+      let rows = await read(term, true);
+      if (rows.length === 0) rows = await read(term, false); // in case the country filter isn't supported
+      for (const job of rows) {
+        const extra = (job.secondaryLocations || []).map(l => l.Name).filter(Boolean);
+        all.push({
+          title: job.Title,
+          location: [job.PrimaryLocation, ...extra].filter(Boolean).join('; '),
+          postedAt: job.PostedDate ? new Date(job.PostedDate).toISOString() : null,
+          url: `https://${company.host}/hcmUI/CandidateExperience/en/sites/${site}/job/${job.Id}`,
+        });
+      }
+      await pause(200);
+    }
+    return all;
+  },
+
+  // jobs.<company>.com search pages built on SAP SuccessFactors (Scotiabank, SAP).
+  // There's no data feed, so this reads the search results page itself.
+  // EXPERIMENTAL: if the company redesigns its page, this stops working.
+  async successfactors(company) {
+    const origin = new URL(company.careersUrl).origin;
+    const all = [];
+    let sawRows = false;
+    for (const term of company.searchTerms) {
+      const html = await getText(`${origin}/search/?q=${encodeURIComponent(term)}` +
+        `&locationsearch=${encodeURIComponent(company.locationSearch || '')}` +
+        '&sortColumn=referencedate&sortDirection=desc');
+      for (const row of html.split(/<tr[^>]*class="[^"]*data-row/).slice(1)) {
+        sawRows = true;
+        const link = row.match(/<a[^>]*jobTitle-link[^>]*>[\s\S]*?<\/a>/);
+        if (!link) continue;
+        const href = link[0].match(/href="([^"]+)"/)?.[1];
+        const title = cleanText(link[0].replace(/<[^>]+>/g, ''));
+        const where = row.match(/class="jobLocation[^"]*"[^>]*>([\s\S]*?)<\/span>/)?.[1];
+        const when = row.match(/class="jobDate[^"]*"[^>]*>([\s\S]*?)<\/span>/)?.[1];
+        const date = when ? new Date(cleanText(when)) : null;
+        all.push({
+          title,
+          location: where ? cleanText(where) : '',
+          postedAt: date && !isNaN(date) ? date.toISOString() : null,
+          url: href ? new URL(href, origin).href : company.careersUrl,
+        });
+      }
+      await pause(300);
+    }
+    if (!sawRows) throw new Error('search page layout not recognised (no result rows found)');
+    return all;
+  },
 };
+
+// Walks Workday's list of filters and returns the one for our country (e.g. Canada),
+// shaped the way Workday expects: { locationCountry: ["<id>"] }. Returns {} if none.
+function findCountryFacet(facets, country) {
+  if (!country) return {};
+  const found = [];
+  const walk = (node, param) => {
+    const p = node.facetParameter || param;
+    if (node.id && node.descriptor && node.descriptor.toLowerCase() === country.toLowerCase()) {
+      found.push({ param: p, id: node.id });
+    }
+    (node.values || []).forEach(child => walk(child, p));
+  };
+  (facets || []).forEach(f => walk(f));
+  if (found.length === 0) return {};
+  const best = found.find(f => /country/i.test(f.param)) || found[0];
+  return { [best.param]: [best.id] };
+}
 
 // Workday says "Posted Today", "Posted Yesterday", "Posted 3 Days Ago", "Posted 30+ Days Ago".
 // We turn that into an approximate date.
@@ -167,11 +260,12 @@ function toRoleList(roles) {
 }
 
 // If you list locations, a job must mention one of them. Empty list = keep everything.
+// Every word must appear: "Remote Canada" matches "Remote (Canada)" but not "US-Remote".
 function matchesLocation(job, locations) {
   if (!locations || locations.length === 0) return true;
   const where = (job.location || '').toLowerCase();
   if (/\d+ locations/.test(where)) return true; // Workday hides multi-location details
-  return locations.some(loc => where.includes(loc.toLowerCase()));
+  return locations.some(loc => loc.toLowerCase().split(/\s+/).every(word => where.includes(word)));
 }
 
 // Highest priority first; within the same priority, newest first.
@@ -202,7 +296,8 @@ async function main() {
       const fetcher = fetchers[company.platform];
       if (!fetcher) throw new Error(`unknown platform "${company.platform}"`);
 
-      const jobs = removeDuplicates(await fetcher({ ...company, searchTerms }))
+      const jobs = removeDuplicates(await fetcher({
+        country: config.country, locationSearch: config.locationSearch, ...company, searchTerms }))
         .map(job => ({ ...job, ...matchRole(job, roles) }))
         .filter(job => job.priority) // drop jobs that matched no role
         .filter(job => matchesLocation(job, locations))
@@ -221,6 +316,21 @@ async function main() {
   const output = { updatedAt: new Date().toISOString(), companies: results };
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
   console.log(`\nSaved ${OUTPUT_FILE}`);
+}
+
+function pause(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function cleanText(html) {
+  return html.replace(/&amp;/g, '&').replace(/&#39;|&rsquo;/g, "'").replace(/&quot;/g, '"')
+    .replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+async function getText(url) {
+  const response = await fetch(url, { headers: { 'User-Agent': 'find-a-job-easier (personal job tracker)' } });
+  if (!response.ok) throw new Error(`HTTP ${response.status} from ${new URL(url).hostname}`);
+  return response.text();
 }
 
 async function getJson(url, options = {}) {
