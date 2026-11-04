@@ -1,20 +1,184 @@
 {
-  "locations": ["Toronto", "Remote"],
-
-  "companies": [
+  "locations": [
+    "Toronto",
+    "Mississauga",
+    "Remote"
+  ],
+  "roles": [
     {
-      "name": "Example Greenhouse company",
-      "platform": "greenhouse",
-      "boardId": "replace-me",
-      "careersUrl": "https://boards.greenhouse.io/replace-me",
-      "roles": ["product manager", "analyst"]
+      "name": "Technology Product Manager",
+      "keywords": [
+        "technical product manager",
+        "technology product manager",
+        "product manager technology",
+        "tech product manager"
+      ]
     },
     {
-      "name": "Example Workday company (most big banks)",
-      "platform": "workday",
-      "careersUrl": "https://replace-me.wd3.myworkdayjobs.com/en-US/ReplaceMe",
-      "roles": ["financial analyst", "product owner"],
-      "locations": ["Toronto"]
+      "name": "Banking Product Manager",
+      "keywords": [
+        "banking product manager",
+        "product manager banking",
+        "product manager digital banking"
+      ]
+    },
+    {
+      "name": "Senior Business Analyst, Technology",
+      "keywords": [
+        "senior business analyst",
+        "technology business analyst",
+        "business analyst technology",
+        "technical business analyst",
+        "business systems analyst",
+        "senior ba",
+        "technology ba"
+      ]
+    },
+    {
+      "name": "Product Owner",
+      "keywords": [
+        "product owner"
+      ]
+    },
+    {
+      "name": "Data Product Manager",
+      "keywords": [
+        "data product manager",
+        "product manager data"
+      ]
+    },
+    {
+      "name": "Technology Transformation",
+      "keywords": [
+        "technology transformation",
+        "transformation lead",
+        "transformation manager",
+        "transformation consultant"
+      ]
+    },
+    {
+      "name": "Banking Technology Consultant",
+      "keywords": [
+        "banking technology consultant",
+        "technology advisory consultant",
+        "technology consultant"
+      ]
+    },
+    {
+      "name": "Data/Technology Transformation BA",
+      "keywords": [
+        "data transformation",
+        "data migration",
+        "data product ba",
+        "data product business analyst"
+      ]
+    },
+    {
+      "name": "Business Systems/Product Analyst",
+      "keywords": [
+        "systems analyst",
+        "product analyst"
+      ]
+    },
+    {
+      "name": "Technology Strategy / Advisory",
+      "keywords": [
+        "technology strategy",
+        "technology advisory"
+      ]
+    },
+    {
+      "name": "Senior Product Manager",
+      "keywords": [
+        "senior product manager"
+      ]
+    },
+    {
+      "name": "Digital Product Manager",
+      "keywords": [
+        "digital product manager"
+      ]
+    },
+    {
+      "name": "Platform Product Manager",
+      "keywords": [
+        "platform product manager"
+      ]
+    },
+    {
+      "name": "Product Manager",
+      "keywords": [
+        "product manager"
+      ]
+    },
+    {
+      "name": "Product Operations",
+      "keywords": [
+        "product operations"
+      ]
+    },
+    {
+      "name": "Product Strategy",
+      "keywords": [
+        "product strategy"
+      ]
+    },
+    {
+      "name": "Product Transformation Lead",
+      "keywords": [
+        "product transformation"
+      ]
     }
+  ],
+  "workdaySearchTerms": [
+    "product manager",
+    "product owner",
+    "business analyst",
+    "systems analyst",
+    "product analyst",
+    "transformation",
+    "technology consultant",
+    "technology strategy",
+    "technology advisory",
+    "data migration",
+    "product operations",
+    "product strategy"
+  ],
+
+  "companies": [
+    {"name": "RBC", "platform": "workday", "careersUrl": "https://rbc.wd3.myworkdayjobs.com/RBCGLOBAL1"},
+    {"name": "TD", "platform": "workday", "careersUrl": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers"},
+    {"name": "BMO", "platform": "workday", "careersUrl": "https://bmo.wd3.myworkdayjobs.com/External"},
+    {"name": "CIBC", "platform": "workday", "careersUrl": "https://cibc.wd3.myworkdayjobs.com/search"},
+    {"name": "Scotiabank", "platform": "link", "careersUrl": "https://jobs.scotiabank.com"},
+    {"name": "National Bank", "platform": "link", "careersUrl": "https://emplois.bnc.ca/en_CA/careers"},
+    {"name": "Citi", "platform": "workday", "careersUrl": "https://citi.wd5.myworkdayjobs.com/2"},
+    {"name": "JPMorgan Chase", "platform": "link", "careersUrl": "https://careers.jpmorgan.com"},
+    {"name": "Bank of America", "platform": "workday", "careersUrl": "https://ghr.wd1.myworkdayjobs.com/Lateral-US"},
+    {"name": "Goldman Sachs", "platform": "link", "careersUrl": "https://higher.gs.com"},
+    {"name": "Morgan Stanley", "platform": "workday", "careersUrl": "https://ms.wd5.myworkdayjobs.com/External"},
+    {"name": "Wells Fargo", "platform": "workday", "careersUrl": "https://wd1.myworkdaysite.com/recruiting/wf/WellsFargoJobs"},
+    {"name": "Stripe", "platform": "greenhouse", "boardId": "stripe", "careersUrl": "https://stripe.com/jobs"},
+    {"name": "Block", "platform": "greenhouse", "boardId": "block", "careersUrl": "https://block.xyz/careers"},
+    {"name": "Adyen", "platform": "greenhouse", "boardId": "adyen", "careersUrl": "https://careers.adyen.com"},
+    {"name": "FIS", "platform": "workday", "careersUrl": "https://fis.wd5.myworkdayjobs.com/SearchJobs"},
+    {"name": "Fiserv", "platform": "link", "careersUrl": "https://www.careers.fiserv.com"},
+    {"name": "Global Payments", "platform": "workday", "careersUrl": "https://tsys.wd1.myworkdayjobs.com/TSYS"},
+    {"name": "PayPal", "platform": "workday", "careersUrl": "https://paypal.wd1.myworkdayjobs.com/jobs"},
+    {"name": "Mastercard", "platform": "workday", "careersUrl": "https://mastercard.wd1.myworkdayjobs.com/CorporateCareers"},
+    {"name": "Visa", "platform": "smartrecruiters", "boardId": "Visa", "careersUrl": "https://corporate.visa.com/en/jobs"},
+    {"name": "Wealthsimple", "platform": "ashby", "boardId": "wealthsimple", "careersUrl": "https://jobs.ashbyhq.com/wealthsimple"},
+    {"name": "KOHO", "platform": "link", "careersUrl": "https://www.koho.ca/careers"},
+    {"name": "Neo Financial", "platform": "ashby", "boardId": "neofinancial", "careersUrl": "https://jobs.ashbyhq.com/neofinancial"},
+    {"name": "Deloitte", "platform": "link", "careersUrl": "https://www.deloitte.com/ca/en/careers.html"},
+    {"name": "PwC", "platform": "link", "careersUrl": "https://www.pwc.com/ca/en/careers.html"},
+    {"name": "KPMG", "platform": "link", "careersUrl": "https://kpmg.com/ca/en/careers.html"},
+    {"name": "Accenture", "platform": "link", "careersUrl": "https://www.accenture.com/ca-en/careers"},
+    {"name": "IBM Consulting", "platform": "link", "careersUrl": "https://www.ibm.com/careers"},
+    {"name": "Temenos", "platform": "link", "careersUrl": "https://www.temenos.com/careers"},
+    {"name": "Avaloq", "platform": "link", "careersUrl": "https://www.avaloq.com/careers"},
+    {"name": "Oracle Financial Services", "platform": "link", "careersUrl": "https://careers.oracle.com"},
+    {"name": "SAP", "platform": "link", "careersUrl": "https://jobs.sap.com"},
+    {"name": "Salesforce", "platform": "workday", "careersUrl": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site"}
   ]
 }
