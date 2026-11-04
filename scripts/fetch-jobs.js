@@ -25,6 +25,12 @@ const MAX_PER_COMPANY = 5;
 // so the rest of the script doesn't care which platform a company uses.
 
 const fetchers = {
+  // Companies whose careers site can't be read automatically (Oracle, SuccessFactors,
+  // custom sites...). Nothing is fetched; the page just shows their careers link.
+  async link() {
+    return [];
+  },
+
   // boards.greenhouse.io/<boardId>  or  job-boards.greenhouse.io/<boardId>
   async greenhouse(company) {
     const data = await getJson(`https://boards-api.greenhouse.io/v1/boards/${company.boardId}/jobs`);
@@ -74,25 +80,37 @@ const fetchers = {
   // careers page makes. It works for most companies but can break if they change it.
   async workday(company) {
     const url = new URL(company.careersUrl);
-    const tenant = url.hostname.split('.')[0];
     const pathParts = url.pathname.split('/').filter(Boolean);
-    const site = pathParts[pathParts.length - 1]; // skip "en-US" if present
+    let tenant, site, jobBase;
+
+    if (url.hostname.includes('myworkdaysite.com')) {
+      // Style 2: wd1.myworkdaysite.com/recruiting/<tenant>/<site>
+      const i = pathParts.indexOf('recruiting');
+      tenant = pathParts[i + 1];
+      site = pathParts[i + 2];
+      jobBase = `https://${url.hostname}/recruiting/${tenant}/${site}`;
+    } else {
+      // Style 1: <tenant>.wd3.myworkdayjobs.com/<site>  (an "en-US" in the path is skipped)
+      tenant = url.hostname.split('.')[0];
+      site = pathParts[pathParts.length - 1];
+      jobBase = `https://${url.hostname}/${site}`;
+    }
     const endpoint = `https://${url.hostname}/wday/cxs/${tenant}/${site}/jobs`;
 
     // Workday lets us search by text, so run one search per role.
     const all = [];
-    for (const role of company.roles) {
+    for (const term of company.searchTerms) {
       const data = await getJson(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ appliedFacets: {}, limit: 20, offset: 0, searchText: role }),
+        body: JSON.stringify({ appliedFacets: {}, limit: 20, offset: 0, searchText: term }),
       });
       for (const job of data.jobPostings || []) {
         all.push({
           title: job.title,
           location: job.locationsText,
           postedAt: parseWorkdayDate(job.postedOn),
-          url: `https://${url.hostname}/${site}${job.externalPath}`,
+          url: jobBase + job.externalPath,
         });
       }
     }
@@ -116,21 +134,49 @@ function parseWorkdayDate(text = '') {
 }
 
 
-// ---------- FILTERING ----------
-// A job matches if its title contains any of your role keywords (case-insensitive).
-function matchesRole(job, roles) {
-  const title = (job.title || '').toLowerCase();
-  return roles.some(role => title.includes(role.toLowerCase()));
+// ---------- FILTERING & PRIORITY ----------
+// Roles in companies.json are listed in priority order (first = most wanted).
+// Each role has a name and keywords. A job gets the priority of the FIRST role
+// whose keyword appears in its title as whole words.
+//   "senior ba" matches "Senior BA, Payments" but not "Senior Banker".
+
+// Lowercase and turn dashes/commas/slashes into spaces, so
+// "Product Manager – Technology" and "Product Manager, Technology" both
+// become "product manager technology".
+function normalize(text) {
+  return ` ${String(text || '').toLowerCase().replace(/[–—\-,/|()]+/g, ' ').replace(/\s+/g, ' ').trim()} `;
+}
+
+function titleHas(title, keyword) {
+  return normalize(title).includes(normalize(keyword)); // the spaces around each make it whole-word
+}
+
+// Returns { priority, role } for the best-matching role, or null if none match.
+function matchRole(job, roles) {
+  for (let i = 0; i < roles.length; i++) {
+    if (roles[i].keywords.some(k => titleHas(job.title, k))) {
+      return { priority: i + 1, role: roles[i].name };
+    }
+  }
+  return null;
+}
+
+// Also accepts a plain list of keywords, e.g. ["product manager", "analyst"].
+function toRoleList(roles) {
+  return roles.map(r => (typeof r === 'string' ? { name: r, keywords: [r] } : r));
 }
 
 // If you list locations, a job must mention one of them. Empty list = keep everything.
 function matchesLocation(job, locations) {
   if (!locations || locations.length === 0) return true;
   const where = (job.location || '').toLowerCase();
+  if (/\d+ locations/.test(where)) return true; // Workday hides multi-location details
   return locations.some(loc => where.includes(loc.toLowerCase()));
 }
 
-function newestFirst(a, b) {
+// Highest priority first; within the same priority, newest first.
+function byPriorityThenNewest(a, b) {
+  if (a.priority !== b.priority) return a.priority - b.priority;
   // Jobs without a date go to the bottom.
   return (b.postedAt ? Date.parse(b.postedAt) : 0) - (a.postedAt ? Date.parse(a.postedAt) : 0);
 }
@@ -147,21 +193,23 @@ async function main() {
   const results = [];
 
   for (const company of config.companies) {
-    const roles = company.roles || [];
+    const roles = toRoleList(company.roles || config.roles || []);
+    const searchTerms = config.workdaySearchTerms || roles.flatMap(r => r.keywords);
     const locations = company.locations ?? config.locations ?? [];
-    const base = { name: company.name, careersUrl: company.careersUrl, roles };
+    const base = { name: company.name, careersUrl: company.careersUrl };
 
     try {
       const fetcher = fetchers[company.platform];
       if (!fetcher) throw new Error(`unknown platform "${company.platform}"`);
 
-      const jobs = removeDuplicates(await fetcher(company))
-        .filter(job => matchesRole(job, roles))
+      const jobs = removeDuplicates(await fetcher({ ...company, searchTerms }))
+        .map(job => ({ ...job, ...matchRole(job, roles) }))
+        .filter(job => job.priority) // drop jobs that matched no role
         .filter(job => matchesLocation(job, locations))
-        .sort(newestFirst)
+        .sort(byPriorityThenNewest)
         .slice(0, MAX_PER_COMPANY);
 
-      results.push({ ...base, status: 'ok', jobs });
+      results.push({ ...base, status: company.platform === 'link' ? 'link' : 'ok', jobs });
       console.log(`✓ ${company.name}: ${jobs.length} matching job(s)`);
     } catch (error) {
       // One broken company shouldn't stop the others.
