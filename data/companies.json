@@ -2,8 +2,10 @@
   "locations": [
     "Toronto",
     "Mississauga",
-    "Remote"
+    "Remote Canada"
   ],
+  "country": "Canada",
+  "locationSearch": "Toronto",
   "roles": [
     {
       "name": "Technology Product Manager",
@@ -150,23 +152,23 @@
     {"name": "TD", "platform": "workday", "careersUrl": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers"},
     {"name": "BMO", "platform": "workday", "careersUrl": "https://bmo.wd3.myworkdayjobs.com/External"},
     {"name": "CIBC", "platform": "workday", "careersUrl": "https://cibc.wd3.myworkdayjobs.com/search"},
-    {"name": "Scotiabank", "platform": "link", "careersUrl": "https://jobs.scotiabank.com"},
+    {"name": "Scotiabank", "platform": "successfactors", "careersUrl": "https://jobs.scotiabank.com"},
     {"name": "National Bank", "platform": "link", "careersUrl": "https://emplois.bnc.ca/en_CA/careers"},
     {"name": "Citi", "platform": "workday", "careersUrl": "https://citi.wd5.myworkdayjobs.com/2"},
-    {"name": "JPMorgan Chase", "platform": "link", "careersUrl": "https://careers.jpmorgan.com"},
+    {"name": "JPMorgan Chase", "platform": "oracle", "host": "jpmc.fa.oraclecloud.com", "site": "CX_1001", "careersUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/requisitions"},
     {"name": "Bank of America", "platform": "workday", "careersUrl": "https://ghr.wd1.myworkdayjobs.com/Lateral-US"},
-    {"name": "Goldman Sachs", "platform": "link", "careersUrl": "https://higher.gs.com"},
+    {"name": "Goldman Sachs", "platform": "oracle", "host": "hdpc.fa.us2.oraclecloud.com", "site": "LateralHiring", "careersUrl": "https://higher.gs.com"},
     {"name": "Morgan Stanley", "platform": "workday", "careersUrl": "https://ms.wd5.myworkdayjobs.com/External"},
     {"name": "Wells Fargo", "platform": "workday", "careersUrl": "https://wd1.myworkdaysite.com/recruiting/wf/WellsFargoJobs"},
     {"name": "Stripe", "platform": "greenhouse", "boardId": "stripe", "careersUrl": "https://stripe.com/jobs"},
     {"name": "Block", "platform": "greenhouse", "boardId": "block", "careersUrl": "https://block.xyz/careers"},
     {"name": "Adyen", "platform": "greenhouse", "boardId": "adyen", "careersUrl": "https://careers.adyen.com"},
     {"name": "FIS", "platform": "workday", "careersUrl": "https://fis.wd5.myworkdayjobs.com/SearchJobs"},
-    {"name": "Fiserv", "platform": "link", "careersUrl": "https://www.careers.fiserv.com"},
+    {"name": "Fiserv", "platform": "link", "careersUrl": "https://careers.fiserv.com/us/en/job/"},
     {"name": "Global Payments", "platform": "workday", "careersUrl": "https://tsys.wd1.myworkdayjobs.com/TSYS"},
     {"name": "PayPal", "platform": "workday", "careersUrl": "https://paypal.wd1.myworkdayjobs.com/jobs"},
     {"name": "Mastercard", "platform": "workday", "careersUrl": "https://mastercard.wd1.myworkdayjobs.com/CorporateCareers"},
-    {"name": "Visa", "platform": "smartrecruiters", "boardId": "Visa", "careersUrl": "https://corporate.visa.com/en/jobs"},
+    {"name": "Visa", "platform": "link", "careersUrl": "https://corporate.visa.com/en/jobs"},
     {"name": "Wealthsimple", "platform": "ashby", "boardId": "wealthsimple", "careersUrl": "https://jobs.ashbyhq.com/wealthsimple"},
     {"name": "KOHO", "platform": "link", "careersUrl": "https://www.koho.ca/careers"},
     {"name": "Neo Financial", "platform": "ashby", "boardId": "neofinancial", "careersUrl": "https://jobs.ashbyhq.com/neofinancial"},
@@ -177,8 +179,8 @@
     {"name": "IBM Consulting", "platform": "link", "careersUrl": "https://www.ibm.com/careers"},
     {"name": "Temenos", "platform": "link", "careersUrl": "https://www.temenos.com/careers"},
     {"name": "Avaloq", "platform": "link", "careersUrl": "https://www.avaloq.com/careers"},
-    {"name": "Oracle Financial Services", "platform": "link", "careersUrl": "https://careers.oracle.com"},
-    {"name": "SAP", "platform": "link", "careersUrl": "https://jobs.sap.com"},
+    {"name": "Oracle Financial Services", "platform": "oracle", "host": "eeho.fa.us2.oraclecloud.com", "site": "CX_45001", "careersUrl": "https://careers.oracle.com"},
+    {"name": "SAP", "platform": "successfactors", "careersUrl": "https://jobs.sap.com"},
     {"name": "Salesforce", "platform": "workday", "careersUrl": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site"}
   ]
 }
