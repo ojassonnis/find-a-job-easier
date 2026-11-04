@@ -1,0 +1,20 @@
+{
+  "locations": ["Toronto", "Remote"],
+
+  "companies": [
+    {
+      "name": "Example Greenhouse company",
+      "platform": "greenhouse",
+      "boardId": "replace-me",
+      "careersUrl": "https://boards.greenhouse.io/replace-me",
+      "roles": ["product manager", "analyst"]
+    },
+    {
+      "name": "Example Workday company (most big banks)",
+      "platform": "workday",
+      "careersUrl": "https://replace-me.wd3.myworkdayjobs.com/en-US/ReplaceMe",
+      "roles": ["financial analyst", "product owner"],
+      "locations": ["Toronto"]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find a Job Easier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Find a Job Easier</h1>
+    <p class="updated" id="updated-note">Loading job board…</p>
+  </header>
+
+  <!-- Tabs. app.js switches between them and keeps the choice in the URL (#linkedin or #job-board). -->
+  <nav class="tabs" role="tablist" aria-label="Job sources">
+    <button class="tab" role="tab" id="tab-linkedin" aria-controls="panel-linkedin" aria-selected="true">LinkedIn</button>
+    <button class="tab" role="tab" id="tab-job-board" aria-controls="panel-job-board" aria-selected="false">Job Board</button>
+  </nav>
+
+  <main>
+    <!-- ===== LINKEDIN TAB ===== -->
+    <section class="panel" role="tabpanel" id="panel-linkedin" aria-labelledby="tab-linkedin">
+      <form id="linkedin-form" class="search-form">
+        <label>
+          Job category or keywords
+          <input type="text" id="li-keywords" placeholder="e.g. financial analyst" required>
+        </label>
+        <label>
+          City
+          <input type="text" id="li-city" placeholder="e.g. Toronto">
+        </label>
+        <label>
+          Posted within
+          <select id="li-window">
+            <option value="r86400">Past 24 hours</option>
+            <option value="r604800">Past week</option>
+            <option value="r2592000">Past month</option>
+            <option value="">Any time</option>
+          </select>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="primary">Search LinkedIn</button>
+          <button type="button" id="li-save" class="secondary">Save this search</button>
+        </div>
+      </form>
+      <p class="hint">Results open on LinkedIn, newest first, so you can apply right there.</p>
+
+      <h2>Saved searches</h2>
+      <ul id="saved-searches" class="saved-list"></ul>
+    </section>
+
+    <!-- ===== JOB BOARD TAB ===== -->
+    <section class="panel" role="tabpanel" id="panel-job-board" aria-labelledby="tab-job-board" hidden>
+      <div id="board"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

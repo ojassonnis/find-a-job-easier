@@ -1,0 +1,66 @@
+{
+  "updatedAt": "2026-11-04T00:34:55.994Z",
+  "companies": [
+    {
+      "name": "Sample Company A",
+      "careersUrl": "https://example.com/careers",
+      "roles": [
+        "product manager",
+        "analyst"
+      ],
+      "status": "ok",
+      "jobs": [
+        {
+          "title": "Associate Product Manager",
+          "location": "Toronto, ON",
+          "postedAt": "2026-11-03T22:34:55.994Z",
+          "url": "https://example.com/jobs/1"
+        },
+        {
+          "title": "Business Analyst, Payments",
+          "location": "Toronto, ON",
+          "postedAt": "2026-11-02T21:34:55.994Z",
+          "url": "https://example.com/jobs/2"
+        },
+        {
+          "title": "Senior Product Manager, Lending",
+          "location": "Remote, Canada",
+          "postedAt": "2026-10-31T03:34:55.994Z",
+          "url": "https://example.com/jobs/3"
+        }
+      ]
+    },
+    {
+      "name": "Sample Bank B",
+      "careersUrl": "https://example.com/careers",
+      "roles": [
+        "financial analyst"
+      ],
+      "status": "ok",
+      "jobs": [
+        {
+          "title": "Financial Analyst, Treasury",
+          "location": "Toronto, ON",
+          "postedAt": "2026-11-03T07:34:55.994Z",
+          "url": "https://example.com/jobs/4"
+        },
+        {
+          "title": "Financial Analyst II",
+          "location": "Toronto, ON",
+          "postedAt": "2026-10-28T01:34:55.994Z",
+          "url": "https://example.com/jobs/5"
+        }
+      ]
+    },
+    {
+      "name": "Sample Company C",
+      "careersUrl": "https://example.com/careers",
+      "roles": [
+        "product owner"
+      ],
+      "status": "error",
+      "error": "HTTP 404 from boards-api.greenhouse.io",
+      "jobs": []
+    }
+  ]
+}
