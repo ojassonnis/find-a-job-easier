@@ -1,0 +1,34 @@
+# Runs scripts/fetch-jobs.js every day and saves the new data/jobs.json.
+name: Update jobs
+
+on:
+  schedule:
+    - cron: "0 10 * * *"   # every day at 10:00 UTC (6am Toronto in summer, 5am in winter)
+  workflow_dispatch:        # adds a "Run workflow" button so you can refresh any time
+  push:
+    paths:
+      - data/companies.json # refresh straight away when you edit your company list
+
+permissions:
+  contents: write           # lets the workflow commit the updated jobs.json
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch jobs
+        run: node scripts/fetch-jobs.js
+
+      - name: Save jobs.json if it changed
+        run: |
+          git config user.name "job-bot"
+          git config user.email "job-bot@users.noreply.github.com"
+          git add data/jobs.json
+          git diff --cached --quiet || git commit -m "Update jobs $(date -u +%F)"
+          git push
