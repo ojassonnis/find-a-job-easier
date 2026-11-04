@@ -1,26 +1,270 @@
 {
-  "updatedAt": "2026-11-04T03:52:40.824Z",
+  "updatedAt": "2026-11-04T04:13:25.464Z",
   "companies": [
     {
-      "name": "Example Greenhouse company",
-      "careersUrl": "https://boards.greenhouse.io/replace-me",
-      "roles": [
-        "product manager",
-        "analyst"
-      ],
+      "name": "RBC",
+      "careersUrl": "https://rbc.wd3.myworkdayjobs.com/RBCGLOBAL1",
+      "roles": [],
       "status": "error",
-      "error": "HTTP 404 from boards-api.greenhouse.io",
+      "error": "company.roles is not iterable",
       "jobs": []
     },
     {
-      "name": "Example Workday company (most big banks)",
-      "careersUrl": "https://replace-me.wd3.myworkdayjobs.com/en-US/ReplaceMe",
-      "roles": [
-        "financial analyst",
-        "product owner"
-      ],
+      "name": "TD",
+      "careersUrl": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers",
+      "roles": [],
       "status": "error",
-      "error": "HTTP 422 from replace-me.wd3.myworkdayjobs.com",
+      "error": "company.roles is not iterable",
+      "jobs": []
+    },
+    {
+      "name": "BMO",
+      "careersUrl": "https://bmo.wd3.myworkdayjobs.com/External",
+      "roles": [],
+      "status": "error",
+      "error": "company.roles is not iterable",
+      "jobs": []
+    },
+    {
+      "name": "CIBC",
+      "careersUrl": "https://cibc.wd3.myworkdayjobs.com/search",
+      "roles": [],
+      "status": "error",
+      "error": "company.roles is not iterable",
+      "jobs": []
+    },
+    {
+      "name": "Scotiabank",
+      "careersUrl": "https://jobs.scotiabank.com",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "National Bank",
+      "careersUrl": "https://emplois.bnc.ca/en_CA/careers",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "Citi",
+      "careersUrl": "https://citi.wd5.myworkdayjobs.com/2",
+      "roles": [],
+      "status": "error",
+      "error": "company.roles is not iterable",
+      "jobs": []
+    },
+    {
+      "name": "JPMorgan Chase",
+      "careersUrl": "https://careers.jpmorgan.com",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "Bank of America",
+      "careersUrl": "https://ghr.wd1.myworkdayjobs.com/Lateral-US",
+      "roles": [],
+      "status": "error",
+      "error": "company.roles is not iterable",
+      "jobs": []
+    },
+    {
+      "name": "Goldman Sachs",
+      "careersUrl": "https://higher.gs.com",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "Morgan Stanley",
+      "careersUrl": "https://ms.wd5.myworkdayjobs.com/External",
+      "roles": [],
+      "status": "error",
+      "error": "company.roles is not iterable",
+      "jobs": []
+    },
+    {
+      "name": "Wells Fargo",
+      "careersUrl": "https://wd1.myworkdaysite.com/recruiting/wf/WellsFargoJobs",
+      "roles": [],
+      "status": "error",
+      "error": "company.roles is not iterable",
+      "jobs": []
+    },
+    {
+      "name": "Stripe",
+      "careersUrl": "https://stripe.com/jobs",
+      "roles": [],
+      "status": "ok",
+      "jobs": []
+    },
+    {
+      "name": "Block",
+      "careersUrl": "https://block.xyz/careers",
+      "roles": [],
+      "status": "ok",
+      "jobs": []
+    },
+    {
+      "name": "Adyen",
+      "careersUrl": "https://careers.adyen.com",
+      "roles": [],
+      "status": "ok",
+      "jobs": []
+    },
+    {
+      "name": "FIS",
+      "careersUrl": "https://fis.wd5.myworkdayjobs.com/SearchJobs",
+      "roles": [],
+      "status": "error",
+      "error": "company.roles is not iterable",
+      "jobs": []
+    },
+    {
+      "name": "Fiserv",
+      "careersUrl": "https://www.careers.fiserv.com",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "Global Payments",
+      "careersUrl": "https://tsys.wd1.myworkdayjobs.com/TSYS",
+      "roles": [],
+      "status": "error",
+      "error": "company.roles is not iterable",
+      "jobs": []
+    },
+    {
+      "name": "PayPal",
+      "careersUrl": "https://paypal.wd1.myworkdayjobs.com/jobs",
+      "roles": [],
+      "status": "error",
+      "error": "company.roles is not iterable",
+      "jobs": []
+    },
+    {
+      "name": "Mastercard",
+      "careersUrl": "https://mastercard.wd1.myworkdayjobs.com/CorporateCareers",
+      "roles": [],
+      "status": "error",
+      "error": "company.roles is not iterable",
+      "jobs": []
+    },
+    {
+      "name": "Visa",
+      "careersUrl": "https://corporate.visa.com/en/jobs",
+      "roles": [],
+      "status": "ok",
+      "jobs": []
+    },
+    {
+      "name": "Wealthsimple",
+      "careersUrl": "https://jobs.ashbyhq.com/wealthsimple",
+      "roles": [],
+      "status": "ok",
+      "jobs": []
+    },
+    {
+      "name": "KOHO",
+      "careersUrl": "https://www.koho.ca/careers",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "Neo Financial",
+      "careersUrl": "https://jobs.ashbyhq.com/neofinancial",
+      "roles": [],
+      "status": "ok",
+      "jobs": []
+    },
+    {
+      "name": "Deloitte",
+      "careersUrl": "https://www.deloitte.com/ca/en/careers.html",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "PwC",
+      "careersUrl": "https://www.pwc.com/ca/en/careers.html",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "KPMG",
+      "careersUrl": "https://kpmg.com/ca/en/careers.html",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "Accenture",
+      "careersUrl": "https://www.accenture.com/ca-en/careers",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "IBM Consulting",
+      "careersUrl": "https://www.ibm.com/careers",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "Temenos",
+      "careersUrl": "https://www.temenos.com/careers",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "Avaloq",
+      "careersUrl": "https://www.avaloq.com/careers",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "Oracle Financial Services",
+      "careersUrl": "https://careers.oracle.com",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "SAP",
+      "careersUrl": "https://jobs.sap.com",
+      "roles": [],
+      "status": "error",
+      "error": "unknown platform \"link\"",
+      "jobs": []
+    },
+    {
+      "name": "Salesforce",
+      "careersUrl": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site",
+      "roles": [],
+      "status": "error",
+      "error": "company.roles is not iterable",
       "jobs": []
     }
   ]
