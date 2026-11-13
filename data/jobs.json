@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T17:52:59.084Z",
+  "updatedAt": "2026-11-13T17:30:53.326Z",
   "companies": [
     {
       "name": "RBC",
@@ -9,23 +9,15 @@
         {
           "title": "Senior Technical Product Manager - AI Governance & Compliance",
           "location": "TORONTO, Ontario, Canada",
-          "postedAt": "2026-11-03T17:47:26.516Z",
+          "postedAt": "2026-11-03T17:25:25.003Z",
           "url": "https://rbc.wd3.myworkdayjobs.com/RBCGLOBAL1/job/TORONTO-Ontario-Canada/Senior-Technical-Product-Manager---AI-Governance---Compliance_R-0000188155-1",
-          "priority": 1,
-          "role": "Technology Product Manager"
-        },
-        {
-          "title": "Principal Technical Product Manager, Evaluations & Governance",
-          "location": "TORONTO, Ontario, Canada",
-          "postedAt": "2026-11-02T17:47:26.516Z",
-          "url": "https://rbc.wd3.myworkdayjobs.com/RBCGLOBAL1/job/TORONTO-Ontario-Canada/Principal-Technical-Product-Manager--Evaluations---Governance_R-0000186402",
           "priority": 1,
           "role": "Technology Product Manager"
         },
         {
           "title": "Lead Business Systems Analyst",
           "location": "TORONTO, Ontario, Canada",
-          "postedAt": "2026-11-09T17:47:24.799Z",
+          "postedAt": "2026-11-09T17:25:26.539Z",
           "url": "https://rbc.wd3.myworkdayjobs.com/RBCGLOBAL1/job/TORONTO-Ontario-Canada/Lead-Business-Systems-Analyst_R-0000192140-1",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -33,18 +25,26 @@
         {
           "title": "Associate Director, Liquidity & Funding Product Owner",
           "location": "TORONTO, Ontario, Canada",
-          "postedAt": "2026-11-03T17:47:26.516Z",
+          "postedAt": "2026-11-03T17:25:25.003Z",
           "url": "https://rbc.wd3.myworkdayjobs.com/RBCGLOBAL1/job/TORONTO-Ontario-Canada/Director--Liquidity---Funding-Product-Owner_R-0000183526-2",
           "priority": 4,
           "role": "Product Owner"
         },
         {
-          "title": "Lead Digital Product Owner",
+          "title": "Senior Manager, Strategic Execution and Data Transformation",
           "location": "TORONTO, Ontario, Canada",
-          "postedAt": "2026-11-02T17:47:26.516Z",
-          "url": "https://rbc.wd3.myworkdayjobs.com/RBCGLOBAL1/job/TORONTO-Ontario-Canada/Lead-Digital-Product-Owner_R-0000191772-1",
-          "priority": 4,
-          "role": "Product Owner"
+          "postedAt": "2026-10-21T17:25:30.982Z",
+          "url": "https://rbc.wd3.myworkdayjobs.com/RBCGLOBAL1/job/TORONTO-Ontario-Canada/Senior-Manager--Strategic-Execution-and-Data-Transformation_R-0000182714-1",
+          "priority": 8,
+          "role": "Data/Technology Transformation BA"
+        },
+        {
+          "title": "Senior Technical Systems Analyst",
+          "location": "TORONTO, Ontario, Canada",
+          "postedAt": "2026-11-09T17:25:26.539Z",
+          "url": "https://rbc.wd3.myworkdayjobs.com/RBCGLOBAL1/job/TORONTO-Ontario-Canada/Senior-Technical-Systems-Analyst_R-0000192172-1",
+          "priority": 9,
+          "role": "Business Systems/Product Analyst"
         }
       ]
     },
@@ -56,7 +56,7 @@
         {
           "title": "Sr. Business Systems Analyst (Credit Cards)",
           "location": "2 Locations",
-          "postedAt": "2026-11-10T17:47:44.788Z",
+          "postedAt": "2026-11-10T17:25:42.659Z",
           "url": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Toronto-Ontario/Sr-Business-Systems-Analyst--Credit-Cards-_R_1521132",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -64,7 +64,7 @@
         {
           "title": "Senior Business Analyst, Easy Trade",
           "location": "Toronto, Ontario",
-          "postedAt": "2026-11-06T17:47:47.173Z",
+          "postedAt": "2026-11-06T17:25:45.324Z",
           "url": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Toronto-Ontario/Senior-Business-Analyst--Easy-Trade_R_1507514-1",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -72,7 +72,7 @@
         {
           "title": "Sr. Business Systems Analyst",
           "location": "Toronto, Ontario",
-          "postedAt": "2026-11-06T17:47:47.173Z",
+          "postedAt": "2026-11-06T17:25:45.324Z",
           "url": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Toronto-Ontario/Sr-Business-Systems-Analyst_R_1520630-1",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -80,7 +80,7 @@
         {
           "title": "Senior Business Systems Analyst, AI-Enabled Enterprise Solutions",
           "location": "Toronto, Ontario",
-          "postedAt": "2026-11-06T17:47:47.173Z",
+          "postedAt": "2026-11-06T17:25:45.324Z",
           "url": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Toronto-Ontario/Senior-Business-Systems-Analyst--AI-Enabled-Enterprise-Solutions_R_1513801-1",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -88,7 +88,7 @@
         {
           "title": "Sr. Business Systems Analyst, TD Securities",
           "location": "Toronto, Ontario",
-          "postedAt": "2026-11-05T17:47:47.173Z",
+          "postedAt": "2026-11-05T17:25:45.324Z",
           "url": "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers/job/Toronto-Ontario/Sr-Business-Systems-Analyst--TD-Securities_R_1517199-1",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -101,9 +101,17 @@
       "status": "ok",
       "jobs": [
         {
+          "title": "Senior Business Analyst, Commercial Risk Data",
+          "location": "Toronto, ON, CAN",
+          "postedAt": "2026-11-12T17:26:10.966Z",
+          "url": "https://bmo.wd3.myworkdayjobs.com/External/job/Toronto-ON-CAN/Senior-Business-Analyst--Commercial-Risk-Data_R260029363",
+          "priority": 3,
+          "role": "Senior Business Analyst, Technology"
+        },
+        {
           "title": "Senior Business Analyst, Loan Servicing Technology",
           "location": "Toronto, ON, CAN",
-          "postedAt": "2026-10-29T17:48:16.754Z",
+          "postedAt": "2026-10-29T17:26:15.927Z",
           "url": "https://bmo.wd3.myworkdayjobs.com/External/job/Toronto-ON-CAN/Senior-Business-Analyst--Loan-Servicing-Technology_R260029892",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -111,7 +119,7 @@
         {
           "title": "Senior Business Systems Analyst",
           "location": "Toronto, ON, CAN",
-          "postedAt": "2026-10-21T17:48:16.754Z",
+          "postedAt": "2026-10-21T17:26:15.927Z",
           "url": "https://bmo.wd3.myworkdayjobs.com/External/job/Toronto-ON-CAN/Senior-Business-Systems-Analyst_R260028494",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -119,7 +127,7 @@
         {
           "title": "Digital Product Manager",
           "location": "Toronto, ON, CAN",
-          "postedAt": "2026-11-06T17:48:14.641Z",
+          "postedAt": "2026-11-06T17:26:13.941Z",
           "url": "https://bmo.wd3.myworkdayjobs.com/External/job/Toronto-ON-CAN/Digital-Product-Manager_R260029834",
           "priority": 12,
           "role": "Digital Product Manager"
@@ -127,18 +135,10 @@
         {
           "title": "Digital Product Manager",
           "location": "Toronto, ON, CAN",
-          "postedAt": "2026-11-05T17:48:14.641Z",
+          "postedAt": "2026-11-05T17:26:13.941Z",
           "url": "https://bmo.wd3.myworkdayjobs.com/External/job/Toronto-ON-CAN/Digital-Product-Manager_R260030710",
           "priority": 12,
           "role": "Digital Product Manager"
-        },
-        {
-          "title": "Product Manager, Home Financing",
-          "location": "Toronto, ON, CAN",
-          "postedAt": "2026-11-09T17:48:13.649Z",
-          "url": "https://bmo.wd3.myworkdayjobs.com/External/job/Toronto-ON-CAN/Product-Manager--Home-Financing_R260026704",
-          "priority": 14,
-          "role": "Product Manager"
         }
       ]
     },
@@ -150,26 +150,26 @@
         {
           "title": "Business Systems Analyst Co-op (Winter 2027), Enterprise Technology & Business Management",
           "location": "Toronto, ON",
-          "postedAt": "2026-10-26T17:48:39.482Z",
+          "postedAt": "2026-10-26T17:26:37.644Z",
           "url": "https://cibc.wd3.myworkdayjobs.com/search/job/Toronto-ON/Business-Systems-Analyst-Co-op--Winter-2027---Enterprise-Technology---Business-Management_2621526",
-          "priority": 3,
-          "role": "Senior Business Analyst, Technology"
-        },
-        {
-          "title": "Business Systems Analyst Co-op (Winter 2027), Capital Markets Technology",
-          "location": "Toronto, ON",
-          "postedAt": "2026-10-19T17:48:39.482Z",
-          "url": "https://cibc.wd3.myworkdayjobs.com/search/job/Toronto-ON/Business-Systems-Analyst-Co-op--Winter-2027---Capital-Markets-Technology_2621522-1",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
         },
         {
           "title": "Product Owner - Agentic",
           "location": "Toronto, ON",
-          "postedAt": "2026-11-03T17:48:35.267Z",
+          "postedAt": "2026-11-03T17:26:33.668Z",
           "url": "https://cibc.wd3.myworkdayjobs.com/search/job/Toronto-ON/Product-Owner---Agentic_2622389-1",
           "priority": 4,
           "role": "Product Owner"
+        },
+        {
+          "title": "Group Product Manager",
+          "location": "Toronto, ON",
+          "postedAt": "2026-11-13T17:26:33.668Z",
+          "url": "https://cibc.wd3.myworkdayjobs.com/search/job/Toronto-ON/Group-Product-Manager_2617905-1",
+          "priority": 14,
+          "role": "Product Manager"
         }
       ]
     },
@@ -226,7 +226,7 @@
         {
           "title": "Senior Business Analyst and Technology Project Lead",
           "location": "Mississauga Ontario Canada",
-          "postedAt": "2026-10-13T17:49:15.496Z",
+          "postedAt": "2026-10-14T17:27:21.309Z",
           "url": "https://citi.wd5.myworkdayjobs.com/2/job/Mississauga-Ontario-Canada/Senior-Business-Analyst-and-Technology-Project-Lead_26993761",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -234,7 +234,7 @@
         {
           "title": "Head of Domestic Payments, Senior Product Manager – Canada",
           "location": "Toronto - Canada",
-          "postedAt": "2026-10-13T17:49:10.481Z",
+          "postedAt": "2026-10-14T17:27:08.195Z",
           "url": "https://citi.wd5.myworkdayjobs.com/2/job/Toronto---Canada/Head-of-Domestic-Payments--Senior-Product-Manager---Canada_26998150",
           "priority": 11,
           "role": "Senior Product Manager"
@@ -255,7 +255,7 @@
         {
           "title": "CashPro Data Product Manager",
           "location": "3 Locations",
-          "postedAt": "2026-11-12T17:49:50.473Z",
+          "postedAt": "2026-11-12T17:28:00.073Z",
           "url": "https://ghr.wd1.myworkdayjobs.com/Lateral-US/job/Charlotte/CashPro-Data-Product-Manager_26039298-2",
           "priority": 5,
           "role": "Data Product Manager"
@@ -263,7 +263,7 @@
         {
           "title": "CashPro Payments Product Manager",
           "location": "3 Locations",
-          "postedAt": "2026-11-06T17:49:52.638Z",
+          "postedAt": "2026-11-06T17:28:01.386Z",
           "url": "https://ghr.wd1.myworkdayjobs.com/Lateral-US/job/Chicago/CashPro-Payments-Product-Manager_26041500-2",
           "priority": 14,
           "role": "Product Manager"
@@ -293,6 +293,14 @@
       "careersUrl": "https://stripe.com/jobs",
       "status": "ok",
       "jobs": [
+        {
+          "title": "Product Manager, Consumer Bank Network",
+          "location": "SF, SEA, NYC, Chicago, Toronto",
+          "postedAt": "2026-11-12T17:27:06-05:00",
+          "url": "https://stripe.com/jobs/search?gh_jid=8384438",
+          "priority": 14,
+          "role": "Product Manager"
+        },
         {
           "title": "Product Manager, Terminal Payments",
           "location": "Toronto, Canada",
@@ -324,14 +332,6 @@
           "url": "https://stripe.com/jobs/search?gh_jid=7984866",
           "priority": 14,
           "role": "Product Manager"
-        },
-        {
-          "title": "Staff Product Manager, Sail Core",
-          "location": "New York, US - Remote (East Coast), Toronto",
-          "postedAt": "2026-05-11T22:05:58-04:00",
-          "url": "https://stripe.com/jobs/search?gh_jid=7913698",
-          "priority": 14,
-          "role": "Product Manager"
         }
       ]
     },
@@ -355,7 +355,7 @@
         {
           "title": "Senior Business Analyst – Trade Surveillance and Compliance",
           "location": "2 Locations",
-          "postedAt": "2026-10-29T17:51:04.862Z",
+          "postedAt": "2026-10-29T17:28:59.665Z",
           "url": "https://fis.wd5.myworkdayjobs.com/SearchJobs/job/IND-PUNE-FL7/Senior-Business-Analyst---Trade-Surveillance-and-Compliance_JR0310747",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -363,7 +363,7 @@
         {
           "title": "Business Systems Analyst Sr Lead",
           "location": "2 Locations",
-          "postedAt": "2026-10-14T17:51:07.997Z",
+          "postedAt": "2026-10-14T17:29:11.859Z",
           "url": "https://fis.wd5.myworkdayjobs.com/SearchJobs/job/US-FL-JAX-347/Business-Systems-Analyst-Sr-Lead_JR0309807-1",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -371,7 +371,7 @@
         {
           "title": "Commercial Product Manager, Senior Lead - Horizon",
           "location": "4 Locations",
-          "postedAt": "2026-10-27T17:51:04.863Z",
+          "postedAt": "2026-10-27T17:28:59.665Z",
           "url": "https://fis.wd5.myworkdayjobs.com/SearchJobs/job/US-FL-JAX-347/Commercial-Product-Manager--Senior-Lead---Horizon_JR0310066",
           "priority": 14,
           "role": "Product Manager"
@@ -392,7 +392,7 @@
         {
           "title": "Senior Business Analyst - Audit & Governance",
           "location": "2 Locations",
-          "postedAt": "2026-10-28T17:51:24.938Z",
+          "postedAt": "2026-10-28T17:29:36.348Z",
           "url": "https://tsys.wd1.myworkdayjobs.com/TSYS/job/LONDON--UNITED-KINGDOM/Senior-Business-Analyst---Audit---Governance_R0076285",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -400,7 +400,7 @@
         {
           "title": "Senior Business Systems Analyst - API's",
           "location": "3 Locations",
-          "postedAt": "2026-10-27T17:51:23.055Z",
+          "postedAt": "2026-10-27T17:29:34.717Z",
           "url": "https://tsys.wd1.myworkdayjobs.com/TSYS/job/DENVER-COLORADO/Senior-Business-Systems-Analyst---API-s_R0077070-1",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -408,7 +408,7 @@
         {
           "title": "Product Analyst I",
           "location": "3 Locations",
-          "postedAt": "2026-10-26T17:51:24.344Z",
+          "postedAt": "2026-10-26T17:29:35.830Z",
           "url": "https://tsys.wd1.myworkdayjobs.com/TSYS/job/CINCINNATI-OHIO/Product-Analyst-I_R0076462",
           "priority": 9,
           "role": "Business Systems/Product Analyst"
@@ -416,7 +416,7 @@
         {
           "title": "Sr. Product Manager",
           "location": "2 Locations",
-          "postedAt": "2026-11-10T17:51:19.500Z",
+          "postedAt": "2026-11-10T17:29:31.472Z",
           "url": "https://tsys.wd1.myworkdayjobs.com/TSYS/job/ALPHARETTA-GEORGIA/Sr-Product-Manager_R0075934",
           "priority": 14,
           "role": "Product Manager"
@@ -424,7 +424,7 @@
         {
           "title": "Head of IAM Product Strategy",
           "location": "3 Locations",
-          "postedAt": "2026-10-22T17:51:25.722Z",
+          "postedAt": "2026-10-22T17:29:36.877Z",
           "url": "https://tsys.wd1.myworkdayjobs.com/TSYS/job/CINCINNATI-OHIO/Head-of-IAM-Strategy---Risk_R0075427",
           "priority": 16,
           "role": "Product Strategy"
@@ -439,7 +439,7 @@
         {
           "title": "Lead Product Manager, Decisioning Platform",
           "location": "3 Locations",
-          "postedAt": "2026-10-29T17:51:32.436Z",
+          "postedAt": "2026-10-29T17:29:43.737Z",
           "url": "https://paypal.wd1.myworkdayjobs.com/jobs/job/San-Jose-California-United-States-of-America/Lead-Product-Manager--Decisioning-Platform_R0138497-1",
           "priority": 14,
           "role": "Product Manager"
@@ -447,7 +447,7 @@
         {
           "title": "Lead Product Manager, Risk Decisioning",
           "location": "3 Locations",
-          "postedAt": "2026-10-29T17:51:32.436Z",
+          "postedAt": "2026-10-29T17:29:43.737Z",
           "url": "https://paypal.wd1.myworkdayjobs.com/jobs/job/San-Jose-California-United-States-of-America/Lead-Product-Manager--Risk-Decisioning_R0138492-1",
           "priority": 14,
           "role": "Product Manager"
@@ -455,7 +455,7 @@
         {
           "title": "Sr Lead Product Manager, Risk Decisioning",
           "location": "3 Locations",
-          "postedAt": "2026-10-29T17:51:32.436Z",
+          "postedAt": "2026-10-29T17:29:43.737Z",
           "url": "https://paypal.wd1.myworkdayjobs.com/jobs/job/San-Jose-California-United-States-of-America/Sr-Lead-Product-Manager--Risk-Decisioning_R0138494-1",
           "priority": 14,
           "role": "Product Manager"
@@ -463,7 +463,7 @@
         {
           "title": "Senior Lead Product Manager, Decisioning Platform",
           "location": "3 Locations",
-          "postedAt": "2026-10-27T17:51:32.436Z",
+          "postedAt": "2026-10-27T17:29:43.737Z",
           "url": "https://paypal.wd1.myworkdayjobs.com/jobs/job/San-Jose-California-United-States-of-America/Sr-Lead-Product-Manager_R0138343",
           "priority": 14,
           "role": "Product Manager"
@@ -471,7 +471,7 @@
         {
           "title": "Sr Lead Product Manager",
           "location": "3 Locations",
-          "postedAt": "2026-10-26T17:51:32.436Z",
+          "postedAt": "2026-10-26T17:29:43.737Z",
           "url": "https://paypal.wd1.myworkdayjobs.com/jobs/job/New-York-City-New-York-United-States-of-America/Sr-Lead-Product-Manager_R0138364-1",
           "priority": 14,
           "role": "Product Manager"
@@ -481,17 +481,9 @@
     {
       "name": "Mastercard",
       "careersUrl": "https://mastercard.wd1.myworkdayjobs.com/CorporateCareers",
-      "status": "ok",
-      "jobs": [
-        {
-          "title": "Director, Product Operations - Disputes Modernization & Customer Migration (Multiple Openings)",
-          "location": "2 Locations",
-          "postedAt": "2026-10-13T17:52:29.728Z",
-          "url": "https://mastercard.wd1.myworkdayjobs.com/CorporateCareers/job/Toronto-Canada-Ethoca/Director--Product-Operations---Disputes-Modernization---Customer-Migration--Multiple-Openings-_R-288569",
-          "priority": 15,
-          "role": "Product Operations"
-        }
-      ]
+      "status": "error",
+      "error": "HTTP 502 from mastercard.wd1.myworkdayjobs.com",
+      "jobs": []
     },
     {
       "name": "Visa",
@@ -589,7 +581,7 @@
         {
           "title": "Q2C Senior Business Analyst",
           "location": "Canada - Toronto",
-          "postedAt": "2026-11-11T17:52:53.063Z",
+          "postedAt": "2026-11-11T17:30:46.670Z",
           "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Canada---Toronto/Q2C-Senior-Business-Analyst_JR366617",
           "priority": 3,
           "role": "Senior Business Analyst, Technology"
@@ -597,7 +589,7 @@
         {
           "title": "Product Manager - License and Entitlement Operations",
           "location": "Canada - Toronto",
-          "postedAt": "2026-11-03T17:52:52.007Z",
+          "postedAt": "2026-11-03T17:30:45.281Z",
           "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/Canada---Toronto/Manager--Product--Pricing---Integrations-Operations_JR366033",
           "priority": 14,
           "role": "Product Manager"
