@@ -55,7 +55,52 @@
 
     <!-- ===== JOB BOARD TAB ===== -->
     <section class="panel" role="tabpanel" id="panel-job-board" aria-labelledby="tab-job-board" hidden>
-      <div id="board"></div>
+      <div class="job-board-layout">
+        <aside class="filters-panel" id="filters-panel" aria-label="Job filters">
+          <div class="filters-header">
+            <div>
+              <p class="eyebrow">Refine</p>
+              <h2>Filters</h2>
+            </div>
+            <button type="button" class="filter-toggle" id="filter-toggle" aria-expanded="true">Hide</button>
+          </div>
+
+          <div class="filters-body">
+            <label>
+              Date added
+              <select id="filter-date">
+                <option value="all">Any time</option>
+                <option value="7d">Past 7 days</option>
+                <option value="30d">Past 30 days</option>
+                <option value="90d">Past 90 days</option>
+              </select>
+            </label>
+
+            <label>
+              Location
+              <input type="text" id="filter-location" placeholder="Toronto, remote, etc.">
+            </label>
+
+            <label>
+              Company
+              <select id="filter-company">
+                <option value="all">All companies</option>
+              </select>
+            </label>
+
+            <label>
+              Job title
+              <input type="text" id="filter-title" placeholder="Analyst, PM, Product...">
+            </label>
+
+            <button type="button" class="secondary clear-filters" id="clear-filters">Clear filters</button>
+          </div>
+        </aside>
+
+        <div class="board-results">
+          <div id="board"></div>
+        </div>
+      </div>
     </section>
   </main>
 
