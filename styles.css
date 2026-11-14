@@ -6,8 +6,9 @@
   --bg-strong: #dfeae5;
   --surface: rgba(255, 255, 255, 0.8);
   --surface-strong: #ffffff;
-  --ink: #17242d;
-  --muted: #5b6f78;
+  --ink: #0f1d29;
+  --ink-soft: #243b47;
+  --muted: #556b73;
   --line: #d5e1dc;
   --accent: #1b7f63;
   --accent-strong: #145a46;
@@ -55,6 +56,27 @@ body {
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.55;
+}
+
+body,
+.site-header h1,
+.site-header p,
+.tabs .tab,
+.search-form label,
+.filters-panel,
+.filters-body label,
+.saved-list a,
+.saved-list li,
+.company-head h2,
+.company-head a,
+.job-title,
+.job-meta,
+.job-role,
+.empty,
+.hint,
+.updated,
+.company-error {
+  color: var(--ink);
 }
 
 a { color: var(--accent-strong); }
